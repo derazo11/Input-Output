@@ -1,0 +1,9 @@
+.card {
+    width: 300px; /* Establece un ancho fijo para cada tarjeta */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px; /* Añade un margen entre las tarjetas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: gainsboro;
+}
