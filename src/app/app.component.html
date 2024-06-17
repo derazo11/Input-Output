@@ -1,28 +1,35 @@
 
-<div>
-  <h2>Add New User</h2>
-  <form (ngSubmit)="addUser(name.value,email.value,age.valueAsNumber)">
-    <input type="text" #name placeholder="Name" required>
-    <input type="email" #email placeholder="Email" required>
-    <input type="number" #age placeholder="Age" required>
-    <button type="submit" class="btn btn-success">Agregar Usuario</button>
+<div class="datos-usuario">
+  <h2>Agregar Nuevo Usuario</h2>
+  <form (ngSubmit)="addUser(name.value,email.value,age.valueAsNumber,ciudad_nac.value,direccion.value)">
+    <input type="text" #name placeholder="Name" required><br>
+    <input type="email" #email placeholder="Email" required><br>
+    <input type="number" #age placeholder="Age" required><br>
+    <input type="text" #ciudad_nac placeholder="Ciudad Nacimiento" required><br>
+    <input type="text" #direccion placeholder="direccion" required><br><br>
+    <button type="submit" class="btn btn-success btn-sm">Agregar Usuario</button><br>
   </form>
   @if (errorMessage) {
     <div class="alert alert-danger">
       {{ errorMessage }}
     </div>
   }@else if (mensajeAgregado) {
-    {{mensajeAgregado}}
+    <div class="alert alert-success">
+      {{mensajeAgregado}}
+    </div> 
   }
 </div>
 
 <div class="user-profile-container">
 <!--lo que esta entre parentesis es el nombre del evento emiter creado en el hijo-->
+<!--Lo que esta en llaves [] es el Input que esta en el hijo y es la variable que va a recibir informacion del padre-->
 @for (user of users; track $index) {
   <app-user 
   [name]="user.name" 
   [email]="user.email" 
   [age]="user.age"
+  [ciudad_natal]="user.ciudad_nac"
+  [direccion_user]="user.direccion"
   (usuarioSeleccionado)="usuarioSeleccionado($event)"
   (userRemoved)="removeUser($event)"
   />

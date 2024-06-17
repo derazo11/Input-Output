@@ -1,8 +1,10 @@
 <div class="card" (click)="userSelect()">
     <div class="card-body" >
-        <h5 class="card-title">{{ name }}</h5>
+        <h3 class="card-title">{{ name }}</h3>
         <p class="card-text">Email: {{ email }}</p>
         <p class="card-text">Age: {{ age }}</p>
-        <button (click)="removeUser()" class="btn btn-danger">Eliminar usuario</button>
+        <p class="card-text">Ciudad Nacimiento: {{ ciudad_natal }}</p>
+        <p class="card-text">Direccion: {{ direccion_user }}</p>
+        <button (click)="removeUser()" class="btn btn-danger btn-sm">Eliminar usuario</button>
     </div>
 </div>

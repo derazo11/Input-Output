@@ -13,6 +13,8 @@ export class UserComponent {
   @Input() name:string='';
   @Input() email:string='';
   @Input() age:number=0;
+  @Input() ciudad_natal:string='';
+  @Input() direccion_user:string='';
   //Este evento va a eliminar un usuario del arreglo mandando el nombre
   @Output() userRemoved: EventEmitter<string> = new EventEmitter<string>();
   //Enviamos al padre el nombre del usuario seleccionado
